@@ -1,0 +1,37 @@
+<h2>Products</h2>
+
+<div class="flex">
+	<div *ngFor="let product of products" class="item">
+		<h3>
+			<a [href]="product.url" target="_blank" [title]="product.name + ' details' ">
+				{{ product.name }}
+			</a>
+		</h3>
+
+		<h3 *ngIf="product.price">
+			{{ '$' + product.price }}
+		</h3>
+
+		<p *ngIf="product.description">
+			Description: {{ product.description }}
+		</p>
+
+		<p class="color-text" *ngIf="product.rating">
+			{{product.rating}}
+		</p>
+
+		<p class="center">
+			<img *ngIf="product.image" [src]="product.image" width=90%>
+    </p>
+
+			<p class="center">
+				<a class="share" (click)="share(product.url, product.name)">
+					Share via Telegram
+				</a>
+				<app-product-alerts [product]="product" (notify)="onNotify()">
+				</app-product-alerts>
+			</p>
+
+
+	</div>
+</div>
