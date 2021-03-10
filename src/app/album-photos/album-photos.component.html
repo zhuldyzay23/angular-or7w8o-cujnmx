@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let photo of photos">
+    {{photo.albumId}}) PhotoId:{{photo.id}} Title: {{photo.title}} <img src="{{photo.url}}"> <img src="{{photo.thumbnailUrl}}">
+  </li>
+  <button (click) = "returnBack()">Return Back</button>
+</ul>

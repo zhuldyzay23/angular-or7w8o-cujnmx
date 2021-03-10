@@ -1,0 +1,12 @@
+<div *ngIf="album">
+  <p>Album Detail #{{album.id}}</p>
+
+  <input type="text" [(ngModel)]="album.title">
+
+  <p>UserID:{{album.userId}}</p>
+  <button (click)="updateAlbum()">Save</button>
+  <button (click)="goBack()">Return back</button>
+  <a routerLink="/albums/{{album.id}}/photos">
+    <p>Show photos</p>
+  </a>
+</div>

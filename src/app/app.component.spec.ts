@@ -1,9 +1,11 @@
 import { TestBed } from "@angular/core/testing";
+import { RouterTestingModule } from "@angular/router/testing";
 import { AppComponent } from "./app.component";
 
 describe("AppComponent", () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
       declarations: [AppComponent]
     }).compileComponents();
   });
@@ -14,10 +16,10 @@ describe("AppComponent", () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'amazon'`, () => {
+  it(`should have as title 'lab6'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual("amazon");
+    expect(app.title).toEqual("lab6");
   });
 
   it("should render title", () => {
@@ -25,7 +27,7 @@ describe("AppComponent", () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector(".content span").textContent).toContain(
-      "amazon app is running!"
+      "lab6 app is running!"
     );
   });
 });
